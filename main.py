@@ -8,7 +8,7 @@ EXPENSEFILE = "expense.json"
 #------------STORAGE LAYER------------------------>
 
 def load_expense():
-    if os.path.exists(EXPENSEFILE):
+    if not os.path.exists(EXPENSEFILE):
         return []
     try:
         with open(EXPENSEFILE, "r", encoding="utf-8") as f:
@@ -24,7 +24,8 @@ def load_expense():
         sys.exit()
     if not isinstance(expense, list):
         print(f"Error: {EXPENSEFILE} must be a list")
-    return task
+        sys.exit()
+    return expense
 
 def save_expense(expense):
     temp = EXPENSEFILE + ".tmp"
