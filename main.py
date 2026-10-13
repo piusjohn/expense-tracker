@@ -73,8 +73,17 @@ def summary_expense():
     expenses = load_expense()
     print(sum(int(expense["amount"]) for expense in expenses))
     
-def delete_expense():
-    expenses
+def delete_expense(args):
+    id = args[3]
+    expenses = load_expense()
+    temp = []
+    for expense in expenses:
+        if expense["id"] != id:
+            temp.append(expense)
+    save_expense(temp)
+    print("deleted successfully")
+            
+
 
 def main():
     if sys.argv[1] == "add":
@@ -84,6 +93,7 @@ def main():
     if sys.argv[1] == "summary":
         summary_expense()
     if sys.argv[1] == "delete":
+        delete_expense(sys.argv[2:])
 
 
 if __name__ == "__main__":
