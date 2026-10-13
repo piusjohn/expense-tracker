@@ -74,11 +74,11 @@ def summary_expense():
     print(sum(int(expense["amount"]) for expense in expenses))
     
 def delete_expense(args):
-    id = args[3]
+    id = args[1]
     expenses = load_expense()
     temp = []
     for expense in expenses:
-        if expense["id"] != id:
+        if expense["id"] != int(id):
             temp.append(expense)
     save_expense(temp)
     print("deleted successfully")
