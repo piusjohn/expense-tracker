@@ -37,9 +37,12 @@ def save_expense(expense):
 #----------------LOGIC----------------------->
 
 def add_expense(args):
-    
+
     expense = load_expense()
     expense = {
         "description":
         "amount":
     }
+
+def main():
+    
