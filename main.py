@@ -40,8 +40,8 @@ def add_expense(args):
 
     expense = load_expense()
     expense = {
-        "description":
-        "amount":
+        "description": args[1],
+        "amount": args[3]
     }
 
 def main():
