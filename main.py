@@ -1,9 +1,15 @@
 import sys
 import os
 import json
+from datetime import datetime
 
 EXPENSEFILE = "expense.json"
+#------------HELPER FUNCTIONS--------------------->
+def now():
+    return datetime.now()
 
+def next_id():
+    
 
 #------------STORAGE LAYER------------------------>
 
@@ -40,11 +46,13 @@ def save_expense(expense):
 #----------------LOGIC----------------------->
 
 def add_expense(args):
-
+    timestamp = now()
     expense = load_expense()
     list = {
+        "id":
         "description": args[1],
-        "amount": args[3]
+        "amount": args[3],
+        "createdAt": timestamp
     }
     expense.append(list)
     save_expense(expense)
