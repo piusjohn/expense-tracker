@@ -61,8 +61,30 @@ def add_expense(args):
     save_expense(expense)
     print(f"successsfully added expense {args[1]}")
 
+def list_expense():
+    expenses = load_expense()
+    # ID  Date       Description  Amount
+    print("ID  Date       Description  Amount")
+    for expense in expenses:
+        
+        print(f"{expense["id"]}  {expense["createdAt"]}    {expense["description"]}  {expense["amount"]}")
+
+def summary_expense():
+    expenses = load_expense()
+    print(sum(int(expense["amount"]) for expense in expenses))
+    
+def delete_expense():
+    expenses
+
 def main():
-    add_expense(sys.argv[2:])
+    if sys.argv[1] == "add":
+        add_expense(sys.argv[2:])
+    if sys.argv[1] == "list":
+        list_expense()
+    if sys.argv[1] == "summary":
+        summary_expense()
+    if sys.argv[1] == "delete":
+
 
 if __name__ == "__main__":
     main()
