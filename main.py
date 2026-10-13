@@ -45,6 +45,8 @@ def add_expense(args):
         "description": args[1],
         "amount": args[3]
     }
+    save_expense(expense)
+    print(f"successsfully added expense {args1}")
 
 def main():
     add_expense(sys.argv[2:])
