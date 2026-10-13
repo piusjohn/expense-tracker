@@ -1,4 +1,6 @@
 import sys
+import os
+import json
 
 EXPENSEFILE = "expense.json"
 
@@ -9,7 +11,7 @@ def load_expense():
     if os.path.exists(EXPENSEFILE):
         return []
     try:
-        with open(EXPENSEFILE, r, encoding="utf-8") as f:
+        with open(EXPENSEFILE, "r", encoding="utf-8") as f:
             content = f.read().strip()
             if content == "":
                 return []
@@ -46,3 +48,6 @@ def add_expense(args):
 
 def main():
     add_expense(sys.argv[2:])
+
+if __name__ == "__main__":
+    main()
