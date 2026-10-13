@@ -6,7 +6,7 @@ from datetime import datetime
 EXPENSEFILE = "expense.json"
 #------------HELPER FUNCTIONS--------------------->
 def now():
-    return datetime.now()
+    return datetime.now().isoformat(timespec="hours")
 
 def next_id(expenses):
     if not expenses:
