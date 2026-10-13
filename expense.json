@@ -1,4 +1,14 @@
-{
-  "description": "Lunch",
-  "amount": "20"
-}
+[
+  {
+    "description": "Lunch",
+    "amount": "20"
+  },
+  {
+    "description": "Lunch",
+    "amount": "20"
+  },
+  {
+    "description": "Lunch",
+    "amount": "20"
+  }
+]

@@ -32,7 +32,7 @@ def save_expense(expense):
     try:
         with open(temp, "w", encoding="utf-8") as f:
             json.dump(expense, f, indent=2)
-            os.replace(temp, EXPENSEFILE)
+        os.replace(temp, EXPENSEFILE)
     except OSError as e:
         print(f"could not write file: {e}")
         sys.exit()
@@ -42,12 +42,13 @@ def save_expense(expense):
 def add_expense(args):
 
     expense = load_expense()
-    expense = {
+    list = {
         "description": args[1],
         "amount": args[3]
     }
+    expense.append(list)
     save_expense(expense)
-    print(f"successsfully added expense {args1}")
+    print(f"successsfully added expense {args[1]}")
 
 def main():
     add_expense(sys.argv[2:])
