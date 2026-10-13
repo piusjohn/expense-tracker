@@ -8,8 +8,11 @@ EXPENSEFILE = "expense.json"
 def now():
     return datetime.now()
 
-def next_id():
-    
+def next_id(expenses):
+    if not expenses:
+        return 1
+    return max(expense["id"] for expense in expenses)+1
+
 
 #------------STORAGE LAYER------------------------>
 
@@ -49,7 +52,7 @@ def add_expense(args):
     timestamp = now()
     expense = load_expense()
     list = {
-        "id":
+        "id": next_id(expense),
         "description": args[1],
         "amount": args[3],
         "createdAt": timestamp
