@@ -45,4 +45,4 @@ def add_expense(args):
     }
 
 def main():
-    
+    add_expense(sys.argv[2:])
