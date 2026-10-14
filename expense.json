@@ -4,53 +4,5 @@
     "description": "Lunch",
     "amount": "20",
     "createdAt": "2026-10-13T14:47:39"
-  },
-  {
-    "id": 3,
-    "description": "Lunch",
-    "amount": "20",
-    "createdAt": "2026-10-13T14"
-  },
-  {
-    "id": 4,
-    "description": "Dinner",
-    "amount": "10",
-    "createdAt": "2026-10-13T14"
-  },
-  {
-    "id": 5,
-    "description": "Dinner",
-    "amount": "10",
-    "createdAt": "2026-10-13T15"
-  },
-  {
-    "id": 6,
-    "description": "Dinner",
-    "amount": "10",
-    "createdAt": "2026-10-13T15"
-  },
-  {
-    "id": 7,
-    "description": "Lunch",
-    "amount": "20",
-    "createdAt": "2026-10-14T08"
-  },
-  {
-    "id": 8,
-    "description": "Lunch",
-    "amount": "20",
-    "createdAt": "2026-10-14T08"
-  },
-  {
-    "id": 9,
-    "description": "Lunch",
-    "amount": "20",
-    "createdAt": "2026-10-14T08"
-  },
-  {
-    "id": 10,
-    "description": "Lunch",
-    "amount": "20",
-    "createdAt": "2026-10-14T08"
   }
 ]
