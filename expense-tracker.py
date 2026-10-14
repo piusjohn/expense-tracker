@@ -64,10 +64,12 @@ def add_expense(args):
 def list_expense():
     expenses = load_expense()
     # ID  Date       Description  Amount
-    print("ID  Date       Description  Amount")
+    print(f"{'ID':^10}  {'Date':^15}  {'Description':^20}  {'Amount':^10}")
+    print("-" * 63) # Separator line
+    
     for expense in expenses:
-        
-        print(f"{expense["id"]:^10}  {expense["createdAt"]:^10}    {expense["description"]:^10}  {expense["amount"]:^10}")
+        shortdate = expense['createdAt'][:10]
+        print(f"{expense['id']:^10}  {shortdate:^15}  {expense['description']:^20}  {expense['amount']:^10}")
 
 def summary_expense():
     expenses = load_expense()
