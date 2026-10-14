@@ -67,7 +67,7 @@ def list_expense():
     print("ID  Date       Description  Amount")
     for expense in expenses:
         
-        print(f"{expense["id"]}  {expense["createdAt"]}    {expense["description"]}  {expense["amount"]}")
+        print(f"{expense["id"]:^10}  {expense["createdAt"]:^10}    {expense["description"]:^10}  {expense["amount"]:^10}")
 
 def summary_expense():
     expenses = load_expense()
