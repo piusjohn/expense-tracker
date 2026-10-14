@@ -59,7 +59,7 @@ def add_expense(args):
     }
     expense.append(list)
     save_expense(expense)
-    print(f"successsfully added expense {args[1]}")
+    print(f"Expense added successfully (ID: {list["id"]})")
 
 def list_expense():
     expenses = load_expense()
