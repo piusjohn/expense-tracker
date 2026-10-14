@@ -84,7 +84,7 @@ def delete_expense(args):
         if expense["id"] != int(id):
             temp.append(expense)
     save_expense(temp)
-    print("deleted successfully")
+    print("Expense deleted successfully")
             
 
 
