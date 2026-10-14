@@ -73,7 +73,8 @@ def list_expense():
 
 def summary_expense():
     expenses = load_expense()
-    print(sum(int(expense["amount"]) for expense in expenses))
+    total = sum(int(expense["amount"]) for expense in expenses)
+    print(f"Total expenses: ${total}")
     
 def delete_expense(args):
     id = args[1]
