@@ -72,11 +72,21 @@ def list_expense():
         shortdate = expense['createdAt'][:10]
         print(f"{expense['id']:^10}  {shortdate:^15}  {expense['description']:^20}  {expense['amount']:^10}")
 
-def summary_expense():
+def summary_expense(args):
     expenses = load_expense()
-    total = sum(int(expense["amount"]) for expense in expenses)
-    print(f"Total expenses: ${total}")
-    
+    if len(args) == 0:
+        total = sum(int(expense["amount"]) for expense in expenses)
+        print(f"Total expenses: ${total}")
+    elif len(args) == 2 and args[0] == "--month":
+        try:
+            month = int(args[1])
+        except:
+            print(f"{args[1]} not an integer")
+            sys.exit(1)
+        total = sum(int(expense["amount"]) for expense in expenses if int(expense["createdAt"][5:7]) == month)
+        month_name = calendar.month_name[month]
+        print(f"Total expenses for {month_name}: ${total}")
+
 def delete_expense(args):
     id = args[1]
     expenses = load_expense()
@@ -95,7 +105,7 @@ def main():
     if sys.argv[1] == "list":
         list_expense()
     if sys.argv[1] == "summary":
-        summary_expense()
+        summary_expense(sys.argv[2:])
     if sys.argv[1] == "delete":
         delete_expense(sys.argv[2:])
 
